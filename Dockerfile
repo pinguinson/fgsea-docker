@@ -11,7 +11,7 @@ RUN R -e "install.packages('shiny', repos='https://cran.rstudio.com/')"
 RUN apt-get install -y gdebi-core wget
 RUN wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.1.834-amd64.deb
 RUN gdebi -n shiny-server-1.5.1.834-amd64.deb
-RUN mkdir /srv/shiny-server/fgsea && cd /srv/shiny-server/fgsea && wget https://github.com/pinguinson/fgsea-web/archive/v0.1.1.tar.gz -O - | tar xz --strip=1 
+RUN mkdir /srv/shiny-server/fgsea && cd /srv/shiny-server/fgsea && wget https://github.com/pinguinson/fgsea-web/archive/v0.1.2.tar.gz -O - | tar xz --strip=1 
 RUN mkdir /srv/shiny-server/fgsea/www/img && chown shiny /srv/shiny-server/fgsea/www/img
 # installing dependencies
 RUN apt-get install -y libcairo2-dev
